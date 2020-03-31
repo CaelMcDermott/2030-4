@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - 2030-4 Draft</title>
+<link rel='stylesheet' href='https://seattleacademy.github.io/2029-4/planets.m4a'>
+<style>
+.correct{
+  background:orange;
+}
+
+.incorrect{
+  background:brown;
+}
+body{
+  background:cyan;
+}
+</style>
+</head>
+<body translate="no">
+<div>Hello</div>
+<img style="position:absolute;top:0px;left:0px;" src="https://seattleacademy.github.io/2028-4/planets.jpg" alt="planets" />
+<input style="position:absolute; top:350px; left:130px; width: 60px" data-correct="mercury" />
+<input style="position:absolute; top:260px; left:70px; width: 60px" data-correct="venus" />
+<input style="position:absolute; top:290px; left:235px; width: 60px" data-correct="earth" />
+<input style="position:absolute; top:165px; left:180px; width: 60px" data-correct="mars" />
+<input style="position:absolute; top:280px; left:400px; width: 60px" data-correct="jupiter" />
+<input style="position:absolute; top:90px; left:280px; width: 70px" data-correct="saturn" />
+<input style="position:absolute; top:110px; left:430px; width: 60px" data-correct="uranus" />
+<input style="position:absolute; top:200px; left:550px; width: 60px" data-correct="neptune" />
+<input style="position:absolute; top:110px; left:550px; width: 60px" data-correct="pluto" />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+console.clear()
+
+$("input").change(onChange);
+
+function onChange(evt){
+  let correct =$(this).data("correct");
+  let response = $(this).val();
+  console.log(correct,response)
+  if(correct==response){
+    $(this).removeClass("incorrect").addClass("correct");
+  } else{
+    $(this).removeClass("correct").addClass("incorrect");
+  }
+}
+    </script>
+</body>
+</html>
